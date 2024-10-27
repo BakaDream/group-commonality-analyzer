@@ -1,0 +1,30 @@
+[project]
+name = "group-commonality-analyzer"
+version = "0.1.0"
+description = "The analysis focuses on the common groups shared with all group members, specifically regarding friends or intersections that are the same across multiple QQ groups."
+authors = [
+    { name = "BakaDream", email = "2507457629@qq.com" }
+]
+dependencies = [
+    "requests>=2.32.3",
+    "pandas>=2.2.3",
+    "openpyxl>=3.1.5",
+    "tqdm>=4.66.5",
+    "matplotlib>=3.9.2",
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/group_commonality_analyzer"]
