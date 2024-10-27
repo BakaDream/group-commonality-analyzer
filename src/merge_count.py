@@ -9,7 +9,7 @@ if __name__ == "__main__":
     # 读取数据
     df = pd.read_csv("merged_user_group_with_count.csv")
     # 过滤掉 group_count 为 1 的数据
-    df = df.query("group_count > 2")
+    df = df.query("group_count > 1")
 
     # 统计每个 group_count 的数量
     count_distribution = df["group_count"].value_counts().reset_index()
