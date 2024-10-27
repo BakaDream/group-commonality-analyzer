@@ -3,6 +3,7 @@ import os
 
 data_folder = os.path.join("data", "group")
 
+
 # 获取一个index为群号 value为群名的dataframe()
 def get_groups_name():
     df = pd.read_csv("qq_group_list.csv")
@@ -39,4 +40,3 @@ if __name__ == "__main__":
 
     # 可选择保存为新的CSV文件
     merged_data.to_csv("merged_user_group_with_count.csv", index=False)
-

@@ -44,8 +44,10 @@ class QQApi:
         resp = self._call_api(path="/get_group_member_list", method="POST", data=data)
         return resp
 
+    def get_login_info(self):
+        resp = self._call_api(path="/get_login_info", method="GET")
+        return resp
 
-if __name__ == "__main__":
-    qq_api = QQApi(base_url="http://localhost:3000")
-    response = qq_api.get_group_member_list(group_id=1128625154, no_cache=True)
-    print(response)
+    def get_robot_uin_range(self):
+        resp = self._call_api(path="/get_robot_uin_range", method="GET")
+        return resp

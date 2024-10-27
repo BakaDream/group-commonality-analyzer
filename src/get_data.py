@@ -9,10 +9,8 @@ import pandas as pd
 import time
 from tqdm import tqdm
 import os
+from static import DATA_PATH, BASE_URL,GROUP_PATH
 
-
-DATA_PATH = "data"
-GROUP_PATH = os.path.join(DATA_PATH, "group")
 
 """
 程序开始前准备过程，用来创建数据目录
@@ -29,7 +27,7 @@ def start_up():
 if __name__ == "__main__":
     print("程序开始执行")
     start_up()
-    qq_api = QQApi(base_url="http://localhost:3000")
+    qq_api = QQApi(base_url=BASE_URL)
     no_cache = True
     # 获取并保存群列表数据
     group_list_data = qq_api.get_group_list(no_cache=no_cache)
@@ -40,8 +38,6 @@ if __name__ == "__main__":
     print("接下来获取每个群的群成员信息")
 
     pbar = tqdm(group_list_df.index)
-    time.sleep(1)
-
     # 获取并保存群成员数据
     for group_id in pbar:
         pbar.set_description(f"正在获取群{group_id}的成员列表")
